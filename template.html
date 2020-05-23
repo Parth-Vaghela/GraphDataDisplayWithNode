@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <title>Chart</title>
+</head>
+<body>
+
+  <div class="container">
+    <!-- for first graph -->
+      <canvas id="ageGroupChart">
+      </canvas>
+    <br>
+    <!-- for second graph -->
+      <canvas id="viewsDataChart">
+      </canvas>
+  </div>
+
+      <div>
+        Mobile<br>
+        Views : {{ mobileViews }}
+        <br>
+        Watch time : {{mobileViewsAverage}}%
+      </div>
+      <br>
+
+      <div>
+        Tablet<br>
+        Views : {{ tabletViews }}
+        <br>
+        Watch time : {{tabletViewsAverage}}%
+      </div>
+      <br>
+      <div>
+        Game Console<br>
+        Views : {{ gameConsoleViews }}
+        <br>
+        Watch time : {{gameConsoleViewsAverage}}%
+      </div>
+      <br>
+      <div>
+        Desktop<br>
+        Views : {{ desktopViews }}
+        <br>
+        Watch time : {{desktopViewsAverage}}%
+      </div>
+
+      <br>
+
+      <div>
+        TV<br>
+        Views : {{ tvViews }} 
+        <br>
+        Watch time : {{tvViewsAverage}}%
+      </div>
+
+      <hr>
+      <br>
+      <br>
+      <div>
+        female <br>
+        {{femalePercentage}}%
+      </div>
+      <br>
+      <div>
+        male <br>
+        {{malePercentage}}%
+      </div>
+
+     
+      <script>
+        // first chart script
+        let ageGroupChart = document.getElementById('ageGroupChart').getContext('2d');
+        let ageGroupChartData = new Chart(ageGroupChart, {
+          type : 'bar' , //bar , horizontalbar, pie, line, radar , polarArea
+          data : {
+            labels : ['18-24', '25-34', '35-44', '45-54', '55-65', '65+'],
+            datasets: [{
+              label : 'age group',
+              data : [
+                1384,
+                1332,
+                748,
+                296,
+                88,
+                144
+              ],
+              backgroundColor : 'green'
+            }]
+          },
+          options : {
+            legend : {
+              display : false
+            }
+          }
+        });
+    
+        // Second chart Script
+        let viewsDataChart = document.getElementById('viewsDataChart').getContext('2d');
+        let viewsAvgData = new Chart(viewsDataChart, {
+          type : 'bar' , //bar , horizontalbar, pie, line, radar , polarArea
+          data : {
+            labels : ['00.08', '00.16', '00.24', 'Full Video'],
+            datasets: [{
+              label : 'age group',
+              data : [
+                12.95,
+                11.79,
+                11.17,
+                23.00
+              ],
+              backgroundColor : 'green'
+            }]
+          },
+          options : {
+            legend : {
+              display : false
+            }
+          }
+        });
+      </script>
+
+    </body>
+</html>

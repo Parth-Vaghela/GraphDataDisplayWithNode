@@ -1,0 +1,16 @@
+{
+  "name": "dynamic-pdf",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "chartjs": "^0.3.24",
+    "fs": "0.0.1-security",
+    "pdf-creator-node": "^1.4.1"
+  }
+}
